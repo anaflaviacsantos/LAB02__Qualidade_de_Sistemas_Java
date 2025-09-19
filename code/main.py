@@ -138,31 +138,31 @@ def saveToCSV(repo_list, filename='collected_repos.csv'):
 
 
 if __name__ == '__main__':
-    # try:
-    #     num_repositories = 1000 
-    #     collected_repos = getInformation(num_repositories)
+    try:
+        num_repositories = 1000 
+        collected_repos = getInformation(num_repositories)
   
-    #     if collected_repos:
-    #         saveToCSV(collected_repos, f'collected_repos.csv')
+        if collected_repos:
+            saveToCSV(collected_repos, f'collected_repos.csv')
 
-    # except Exception as e:
-    #     print(f"\nO script falhou: {e}")
+    except Exception as e:
+        print(f"\nO script falhou: {e}")
         
     collect_metrics.runMetricsCollection(csv_path='collected_repos.csv')
 
-    # CK_csv_path = 'C:\\Users\\dtiDigital\\Desktop\\ck_collected_metrics'
+    CK_csv_path = 'C:\\Users\\dtiDigital\\Desktop\\ck_collected_metrics'
     
-    # collect_metrics.saveCKMetrics(
-    #     CK_csv_path,
-    #     'ck_metrics.csv'
-    # )
+    collect_metrics.saveCKMetrics(
+        CK_csv_path,
+        'ck_metrics.csv'
+    )
     
-    # merge_repositories.createDataset(
-    #     'collected_repos.csv',
-    #     'ck_metrics.csv',
-    #     'final_dataset.csv'
-    # )
+    merge_repositories.createDataset(
+        'collected_repos.csv',
+        'ck_metrics.csv',
+        'final_dataset.csv'
+    )
     
-    #generate_results.generateGraphs('results')
-    #generate_results.generateStats('results/stats.csv')
+    generate_results.generateGraphs('results')
+    generate_results.generateStats('results/stats.csv')
 
